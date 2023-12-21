@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+* {
+    box-sizing: content-box;
+}
+
+body {
+    background-image: url('../bg-wpm.jpg');
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    max-width: 1160px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.text {
+    border: 1px solid slategray;
+    &-head {
+        display: flex;
+    }
+    &-main {
+        overflow-x: hidden;
+        p {
+            white-space: nowrap;
+        }
+    }
+    &-head-error {
+        margin-left: 10px;
+        span {
+            color:red;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+    &-user {
+        padding: 10px 16px;
+        font-size: 18px;
+        position: relative;  
+        word-spacing: 6px;
+        &::selection {
+            background-color: rgb(216, 50, 39);
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 100%;
+            background-color: #9bcddb;
+            animation: blinding 0.9s infinite 0.8s;
+        }
+    }
+} 
+
+.keyboard {
+    border: 1px solid slategray;
+    padding: 5px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 4px 4px 14px #000;
+    margin-top: 10px;
+}
+
+.line {
+    display: flex;
+}
+
+.key {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid slategray;
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.backspace {
+    width: auto;
+}
+
+.tab, .CapsLock {
+    width: 60px;
+    padding: 6px;
+}
+
+.lShift {
+    width: 72px;
+}
+.rShift {
+    width: 90px;
+}
+
+.WhiteSpace {
+    width: 400px;
+}
+
+.Ctrl {
+    width: 70px;
+}
+
+.special-key {
+    font-size: 12px;
+    line-height: 100%;
+}
+
+.pressed {
+    border: 2px solid #1fd447;
+    box-shadow: 0px 7px 8px rgb(146 135 135);
+    transition: all 0.3s ease-in 0.2s;
+}
+.pressedError {
+    border: 2px solid rgb(216, 50, 39);
+    box-shadow: 0px 7px 8px rgb(146 135 135);
+    transition: all 0.3s ease-in 0.2s;
+}
+
+.lose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-block {
+        background-color: #fff;
+        box-shadow: 3px 5px 22px grey;
+        min-width: 500px;
+        
+    position: relative;
+    }
+    &-head {
+        text-align: center;
+        color: rgb(216, 50, 39);
+        font-size: 32px;
+        font-weight: 700;
+    }
+    &-footer {
+        display: flex;
+        text-align: center;
+        border-top: 1px solid grey;
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 400;
+            background-color: #b8abab;
+            color: #fff;
+            padding: 5px 0;
+            flex: 0 0 100%;
+        }
+    }
+}
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.7);
+}
+.close {
+    position: absolute;
+    cursor: pointer;
+    top: 9px;
+    right: 13px;
+}
+.hidden {
+    display: none;
+}
+
+@keyframes blinding {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
